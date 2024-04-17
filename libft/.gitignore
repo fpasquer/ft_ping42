@@ -1,0 +1,6 @@
+*.o
+libft.a
+.vscode/
+test/
+.DS_Store
+**/test_output.txt

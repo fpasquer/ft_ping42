@@ -1,0 +1,17 @@
+{
+	"files.associations": {
+		"ft_ping.h": "c",
+		"unistd.h": "c",
+		"stdbool.h": "c",
+		"ctype.h": "c",
+		"stdio.h": "c",
+		"libft.h": "c",
+		"sys/types.h": "c",
+		"sys/socket.h": "c",
+		"netdb.h": "c",
+		"netinet/in.h": "c",
+		"arpa/inet.h": "c",
+		"ip_icmp.h": "c",
+		"types.h": "c"
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"configurations": [
+
+		{
+			"name": "debug",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/ft_ping",
+			"args": ["-c", "4", "-4", "-v", "www.google.fr"],
+			"cwd": "${fileDirname}",
+			"MIMode": "gdb",
+			"preLaunchTask": "compile"
+		},
+		{
+			"name": "test debug",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/a.out",
+			"cwd": "${fileDirname}",
+			"MIMode": "gdb"
+		},
+		
+	]
+}

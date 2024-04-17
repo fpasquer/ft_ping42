@@ -1,0 +1,13 @@
+FROM debian:bookworm-slim AS base
+
+RUN apt-get update && apt-get install -y \
+	build-essential \
+	iputils-ping\
+	iproute2 \
+	gdb \
+	valgrind \
+	make
+
+RUN mkdir -p /app/ft_ping
+
+WORKDIR /app/ft_ping
