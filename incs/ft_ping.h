@@ -31,6 +31,19 @@
 # define NET_INTERFACE_1		"eth0@if6"
 # define NET_INTERFACE_2		"enp0s3"
 
+typedef struct		s_ping_stats
+{
+	struct timeval	start;
+	struct timeval	stop;
+	struct timeval	start_body;
+	struct timeval	stop_body;
+	long			i;
+	long			received;
+	double			min_milliseconds;
+	double			max_milliseconds;
+	double			avg_milliseconds;
+}					t_ping_stats;
+
 typedef struct		s_ping
 {
 	long			count;
@@ -82,5 +95,11 @@ void				signalHandlerInterrupt(int signal);
 void				signalHandlerQuit(int signal);
 
 void				loopPing(t_ping *ping);
+
+double				pingStatsTimeDiffInMiliseconds(t_ping_stats *ping_stats);
+double				timeDiffInMiliseconds(struct timeval *start,
+		struct timeval *stop);
+double				pingStatsPercentage(t_ping_stats *ping_stats);
+bool				addNewRecivedPackage(t_ping_stats *ping_stats);
 
 #endif

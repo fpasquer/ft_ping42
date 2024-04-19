@@ -35,7 +35,7 @@ int					buildDestIpFromHost(char const *host, t_ping **ping,
 
 	}
 	else
-		fprintf(stderr, "%s family not implemented", (*ping)->addr->ai_family);
+		fprintf(stderr, "%d family not implemented", (*ping)->addr->ai_family);
 	return (ret);
 }
 
