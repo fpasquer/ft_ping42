@@ -1,7 +1,7 @@
 NAME = ft_ping
 
 SRC_NAME = main.c freePing.c parseArgs.c usage.c parseArgsErrors.c \
-	parseArgsHelper.c signalHandler.c loopPing.c ipHelper.c statistiquesPing.c
+	parseArgsHelper.c signalHandler.c loopPing.c ipHelper.c statisticsPing.c
 
 INCLUDES = ft_ping.h
 
@@ -9,6 +9,7 @@ LIBRARY = libft/libft.a
 
 GCC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
+OTHER_FLAGS = -lm
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

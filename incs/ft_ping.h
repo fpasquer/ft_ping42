@@ -17,6 +17,7 @@
 # include <errno.h>
 # include <ifaddrs.h>
 # include <sys/time.h>
+# include <math.h>
 # include "../libft/libft.h"
 
 # define __USE_GNU
@@ -42,6 +43,7 @@ typedef struct		s_ping_stats
 	double			min_milliseconds;
 	double			max_milliseconds;
 	double			avg_milliseconds;
+	double			mdev_miliseconds;
 }					t_ping_stats;
 
 typedef struct		s_ping

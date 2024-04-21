@@ -161,6 +161,9 @@ void				printHeader(t_ping *ping, size_t package_size)
 
 void				printFooter(t_ping *ping, t_ping_stats *ping_stats)
 {
+	double			avg;
+	double			mdev;
+
 	printf("\n--- %s ping statistics ---\n", ping->host);
 	printf("%ld packets transmitted, %ld received, %f%% packet loss, \
 time %.0fms\n",
@@ -168,10 +171,15 @@ time %.0fms\n",
 			pingStatsPercentage(ping_stats),
 			pingStatsTimeDiffInMiliseconds(ping_stats));
 	if (ping_stats->received > 0)
-		printf("rtt min/avg/max/mdev = %.3f/%.3f/%.3f/0.000 ms\n",
-				ping_stats->min_milliseconds,
-				ping_stats->avg_milliseconds,
-				ping_stats->max_milliseconds);
+	{
+		avg = ping_stats->avg_milliseconds / ping_stats->received;
+		mdev = ping_stats->mdev_miliseconds / ping_stats->received;
+		mdev = sqrt(mdev - avg * avg);
+		printf("rtt min/avg/max/mdev = %.3f/%.3f/%.3f/%.3f ms\n",
+				ping_stats->min_milliseconds, avg, ping_stats->max_milliseconds,
+				mdev
+		);
+	}
 	else
 		printf("\n");
 }
